@@ -45,8 +45,8 @@ Student.prototype.exclude = function (reason) {
 // console.log(student.getAverage()); // 4.5
 // console.log(student);
 
-let student = new Student("Артём", "мужской", 25);
-student.exclude('плохая учёба');
-student.setSubject("Geometry");
-student.addMarks(4, 5, 4, 5);
-console.log(student);
+// let student = new Student("Артём", "мужской", 25);
+// student.exclude('плохая учёба');
+// student.setSubject("Geometry");
+// student.addMarks(4, 5, 4, 5);
+// console.log(student);
