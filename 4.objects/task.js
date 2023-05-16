@@ -8,34 +8,35 @@ function Student(name, gender, age) {
 }
 
 Student.prototype.setSubject = function (subjectName) {
-  if(this.hasOwnProperty('exclude') === false) {
+  if(this.hasOwnProperty('excluded') === false) {
     this.subject = subjectName; 
   }
 }
 
 Student.prototype.addMarks = function (...marks) {
-    if(this.marks != undefined || this.hasOwnProperty('exclude') === false) {
+    if(this.marks != undefined || this.hasOwnProperty('excluded') === false) {
     this.marks.push(...marks);
+  }else{
+    return undefined;
   }
 }
 
 Student.prototype.getAverage = function (...marks) {
-  if(this.marks === undefined || this.marks.length === 0 || this.hasOwnProperty('exclude') === true) {
+  if(this.marks === undefined || this.marks.length === 0 || this.hasOwnProperty('excluded') === true) {
     return 0;
   }else {
     let sum = this.marks.reduce((acc, number) => acc + number, 0);
     let arrLength = this.marks.length;
     return sum / arrLength;
+    
   }
     
 }
 
 Student.prototype.exclude = function (reason) {
-  this.exclude = reason;
-  if(this.hasOwnProperty('exclude') === true) {
     delete this.marks;
     delete this.subject;
-  }
+    this.excluded = reason;
 }
 
 // let student = new Student("Василиса", "женский", 19);
@@ -46,12 +47,12 @@ Student.prototype.exclude = function (reason) {
 // console.log(student);
 // console.log(student.marks);
 
-// let student = new Student("Артём", "мужской", 25);
-// student.setSubject("Geometry");
-// student.exclude('плохая учёба')
-// student.addMarks(3, 4, 5);
-// console.log(student.getAverage()); // 0
-// console.log(student.marks);
-// console.log(student.subject);
-// console.log(student);
+let student = new Student("Артём", "мужской", 25);
+student.setSubject("Algebra");
+student.exclude('прогулы')
+student.addMarks(3, 4, 5);
+console.log(student);
+console.log(student.marks);
+console.log(student.subject);
+
 
