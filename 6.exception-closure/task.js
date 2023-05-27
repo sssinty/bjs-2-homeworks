@@ -10,7 +10,7 @@ function validateCount (number) {
     try {
         return parseCount(number);
     }catch (error) {
-        console.log(error)
+        return error
     }
 }
 
@@ -53,7 +53,7 @@ function getTriangle(a, b, c){
 // console.log(triangle.perimeter)
 // console.log(triangle.area)
 
-// console.log(validateCount("ыфва"));
+console.log(validateCount("ыфва"));
 
 // const triangle = getTriangle(1,3,100);
 
