@@ -1,7 +1,7 @@
 class AlarmClock {
-	constructor (alarmCollection  = [], intervalId,) {
-			this.alarmCollection = alarmCollection;
-			this.intervalId = intervalId;
+	constructor () {
+			this.alarmCollection = [];
+			this.intervalId = null;
 	}
 
 	addClock(time, callback) {
@@ -18,7 +18,7 @@ class AlarmClock {
 	}
 
 	getCurrentFormattedTime() {
-		return new Date().toLocaleDateString('ru-RU', {hour: '2-digit', minute: '2-digit'});
+		return new Date().getHours() + ':' + new Date().getMinutes();
 	}
 
 	start() {
@@ -51,4 +51,6 @@ class AlarmClock {
 		this.alarmCollection = [];
 	}
 }
+
+
 
